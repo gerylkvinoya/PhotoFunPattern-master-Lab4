@@ -36,7 +36,19 @@ public abstract class PhotoFilter {
     * @param inPixel is a 32 bit pixel that contains RGB color values
     * @return a new Pixel in which unchanged color components
     */
-    protected int transformPixel (int inPixel){
+    protected int transformPixel (int inPixel, int inPixel0, int inPixel1, int inPixel2,
+                                  int inPixel3, int inPixel4, int inPixel5,
+                                  int inPixel6, int inPixel7){
+        inPixel0 = 1;
+        inPixel1 = 1;
+        inPixel2 =-1;
+        inPixel3 = 1;
+        inPixel4 = -2;
+        inPixel5 = -1;
+        inPixel6 = 1;
+        inPixel7 = 1;
+        //inPixel8 = -1;
+
         return inPixel;
     }
 
@@ -55,8 +67,19 @@ public abstract class PhotoFilter {
 
         for (int w = 0; w < width; w++) {
             for (int h = 0; h < height; h++) {
+
                 int inPixel = inBmp.getPixel(w,h);
-                int outPixel = transformPixel(inPixel);
+                int inPixel0 = inBmp.getPixel(w-1,h-1);
+                int inPixel1 = inBmp.getPixel(w,h-1);
+                int inPixel2 = inBmp.getPixel(w+1,h-1);
+                int inPixel3 = inBmp.getPixel(w-1,h);
+                int inPixel4 = inBmp.getPixel(w+1,h);
+                int inPixel5 = inBmp.getPixel(w-1,h+1);
+                int inPixel6 = inBmp.getPixel(w,h+1);
+                int inPixel7 = inBmp.getPixel(w+1,h+1);
+
+                int outPixel = transformPixel(inPixel, inPixel0, inPixel1, inPixel2, inPixel3, inPixel4,
+                        inPixel5, inPixel6, inPixel7);
                 newBmp.setPixel(w, h, outPixel);
             }
         }
