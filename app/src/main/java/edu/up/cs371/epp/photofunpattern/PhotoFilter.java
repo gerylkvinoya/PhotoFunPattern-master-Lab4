@@ -36,7 +36,8 @@ public abstract class PhotoFilter {
     * @param inPixel is a 32 bit pixel that contains RGB color values
     * @return a new Pixel in which unchanged color components
     */
-    protected int transformPixel (int inPixel, int inPixel0, int inPixel1, int inPixel2,
+    protected int transformPixel (int inPixel, int inPixel0,
+                                  int inPixel1, int inPixel2,
                                   int inPixel3, int inPixel4, int inPixel5,
                                   int inPixel6, int inPixel7){
         inPixel0 = 1;
