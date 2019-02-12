@@ -36,5 +36,15 @@ public class westEdgeFilter extends PhotoFilter {
         int avg = (red + green + blue)/3;
 
         return Color.argb(Color.alpha(inPixel), avg, avg, avg);
+
+
+        /*
+        int outPixel = (inPixel + inPixel0 + -1*inPixel1 + inPixel2 + -2*inPixel3 + -1*inPixel4 +inPixel5 + inPixel6 + -1*inPixel7)/9;
+        int red = constrain(Color.red(outPixel));
+        int green = constrain(Color.green(outPixel));
+        int blue = constrain(Color.blue(outPixel));
+        int average = (red+green+blue)/3;
+        return Color.argb(Color.alpha(inPixel), average,average,average);
+        */
     }
 }

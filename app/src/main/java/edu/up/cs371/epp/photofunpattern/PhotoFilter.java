@@ -65,8 +65,8 @@ public abstract class PhotoFilter {
 
         Bitmap newBmp = Bitmap.createBitmap(width, height, inBmp.getConfig());
 
-        for (int w = 0; w < width; w++) {
-            for (int h = 0; h < height; h++) {
+        for (int w = 1; w < width -1; w++) {
+            for (int h = 1; h < height -1; h++) {
 
                 int inPixel = inBmp.getPixel(w,h);
                 int inPixel0 = inBmp.getPixel(w-1,h-1);
