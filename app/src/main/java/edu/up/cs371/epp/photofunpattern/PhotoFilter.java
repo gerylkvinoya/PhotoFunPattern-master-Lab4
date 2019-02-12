@@ -78,7 +78,8 @@ public abstract class PhotoFilter {
                 int inPixel6 = inBmp.getPixel(w,h+1);
                 int inPixel7 = inBmp.getPixel(w+1,h+1);
 
-                int outPixel = transformPixel(inPixel, inPixel0, inPixel1, inPixel2, inPixel3, inPixel4,
+                int outPixel = transformPixel(inPixel, inPixel0,
+                        inPixel1, inPixel2, inPixel3, inPixel4,
                         inPixel5, inPixel6, inPixel7);
                 newBmp.setPixel(w, h, outPixel);
             }
