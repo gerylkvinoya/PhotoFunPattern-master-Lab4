@@ -38,7 +38,8 @@ public abstract class PhotoFilter {
     */
     protected int transformPixel (int inPixel, int inPixel0,
                                   int inPixel1, int inPixel2,
-                                  int inPixel3, int inPixel4, int inPixel5,
+                                  int inPixel3, int inPixel4,
+                                  int inPixel5,
                                   int inPixel6, int inPixel7){
         inPixel0 = 1;
         inPixel1 = 1;
